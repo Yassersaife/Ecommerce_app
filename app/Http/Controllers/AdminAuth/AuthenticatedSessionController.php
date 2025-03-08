@@ -4,7 +4,6 @@ namespace App\Http\Controllers\AdminAuth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -24,13 +23,14 @@ class AuthenticatedSessionController extends Controller
      * Handle an incoming authentication request.
      */
     public function store(LoginRequest $request): RedirectResponse
-    {
-        $credentials = $request->only('email', 'password');
+    {        $credentials = $request->only('email', 'password');
 
         if (Auth::guard('admin')->attempt($credentials)) {
             $request->session()->regenerate();
             return to_route('admin.index');
-    }
+        }
+    
+        return back()->withErrors(['email' => __('auth.failed')]);
 }
 
     /**

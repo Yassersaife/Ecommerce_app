@@ -129,4 +129,29 @@ return [
     'password'              => 'Password',
     'password_confirmation' => 'Confirm Password',
 
+     /*
+    | Category MODULE
+    */
+     'Categorys'    => 'Categorys',
+    'no_image_available'  => 'Not found',
+    'description'         => 'Description',
+    'image'               => 'Image',
+    'categories'          => 'Categories',
+    'add_new_category'    => 'Add New Category',
+    'edit_category'       => 'Edit Category',
+    'delete_category'     => 'Delete Category',
+    'show_category'       => 'Show Category',
+     /*
+    | Brands MODULE
+    */
+    'brand'    => 'Brand',
+    'no_image_available'  => 'Not found',
+    'description'         => 'Description',
+    'image'               => 'Image',
+    'brands'          => 'Brands',
+    'add_new_brand'    => 'Add New Brand',
+    'edit_brand'       => 'Edit Brand',
+    'delete_brand'     => 'Delete Brand',
+    'show_brand'       => 'Show Brand',
+
 ];

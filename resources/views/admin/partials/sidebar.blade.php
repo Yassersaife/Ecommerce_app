@@ -57,31 +57,48 @@
     <div class="menu-inner-shadow"></div>
 
     <ul class="menu-inner py-1">
-        <!-- Dashboard -->
         <li class="menu-item @yield('home_active')">
             <a href="{{ route('admin.index') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Analytics">Dashboard</div>
+                <i class="menu-icon tf-icons bx bx-home"></i>
+                <div>Dashboard</div>
             </a>
         </li>
 
-        <!-- Admins -->
         <li class="menu-item @yield('admins_active')">
             <a href="{{ route('admin.admins.index') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Analytics">Admins</div>
+                <i class="menu-icon tf-icons bx bx-user-check"></i>
+                <div>Admins</div>
             </a>
         </li>
 
-
-        <!-- USERS -->
         <li class="menu-item @yield('users_active')">
             <a href="{{ route('admin.users.index') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Analytics">Users</div>
+                <i class="menu-icon tf-icons bx bx-group"></i>
+                <div>Users</div>
             </a>
         </li>
 
+        <li class="menu-item @yield('categories_active')">
+            <a href="{{ route('admin.categories.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-category"></i>
+                <div>Categories</div>
+            </a>
+        </li>
+
+        <li class="menu-item @yield('brands_active')">
+            <a href="{{ route('admin.brands.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-store"></i>
+                <div>Brands</div>
+            </a>
+        </li>
+
+        <li class="menu-item @yield('products_active')">
+            <a href="{{ route('admin.categories.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-package"></i>
+                <div>Products</div>
+            </a>
+        </li>
     </ul>
+
 </aside>
 <!-- / Menu -->

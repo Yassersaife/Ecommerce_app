@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BrandController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
@@ -25,6 +27,15 @@ Route::prefix('admin')->name('admin.')->group(function () {
 ##------------------------------------------------------- USERS MODULE
      Route::controller(UserController::class)->group(function () {
         Route::resource('users', UserController::class);
+    });
+    ##------------------------------------------------------- Categorys MODULE
+    Route::controller(CategoryController::class)->group(function () {
+        Route::resource('categories', CategoryController::class);
+    });
+        ##------------------------------------------------------- Brands MODULE
+
+    Route::controller(BrandController::class)->group(function () {
+        Route::resource('brands', BrandController::class);
     });
 
 

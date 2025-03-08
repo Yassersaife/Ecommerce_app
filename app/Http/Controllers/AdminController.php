@@ -87,7 +87,7 @@ class AdminController extends Controller
      */
     public function show(Admin $admin)
     {
-        if (!$admin->super_admin) return view(self::DIRECTORY . ".show", \get_defined_vars());
+         return view(self::DIRECTORY . ".show", \get_defined_vars());
     }
 
     /**
