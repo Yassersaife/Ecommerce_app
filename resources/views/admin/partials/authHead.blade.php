@@ -34,7 +34,6 @@
     <link rel="stylesheet" href="{{ asset('assets-back') }}/vendor/css/pages/page-auth.css" />
     <!-- Helpers -->
     <script src="{{ asset('assets-back') }}/vendor/js/helpers.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
