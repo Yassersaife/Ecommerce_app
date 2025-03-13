@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default"
+<html lang="en" class="light-style layout-menu-fixed" data-theme="theme-default"
     data-assets-path="{{ asset('assets-back') }}/" data-template="vertical-menu-template-free">
 
 @include('admin.partials.head')

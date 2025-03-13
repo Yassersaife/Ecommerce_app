@@ -13,8 +13,7 @@
     <div class="form-group col-12">
         <label class="form-label">{{ __('lang.image') }}</label>
         @if ($category->image)
-            <img src="{{ Storage::url($category->image) }}" alt="{{ $category->name }}" class="img-thumbnail"
-                style="max-width: 200px;">
+            <img src="{{ asset('storage/' . $category->image) }}" class="img-thumbnail" style="max-width: 200px;">
         @else
             <p>{{ __('lang.no_image_available') }}</p>
         @endif

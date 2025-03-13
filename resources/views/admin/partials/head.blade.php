@@ -6,7 +6,6 @@
     <title>@yield('title')</title>
 
     <meta name="description" content="" />
-    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ asset('assets-back') }}/img/favicon/favicon.ico" />

@@ -5,10 +5,10 @@ use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Middleware\AdminMiddleware;
 
 
 //front
@@ -17,25 +17,29 @@ Route::prefix('front')->name('front.')->group(function () {
 });
 //admin
 Route::prefix('admin')->name('admin.')->group(function () {
-    Route::get('/', DashboardController::class)->middleware(['admin'])->name('index');
+    Route::get('/', DashboardController::class)->name('index')->middleware(['admin']);
 
 
 ##------------------------------------------------------- ADMINS MODULE
     Route::controller(AdminController::class)->group(function () {
-        Route::resource('admins', AdminController::class);
+        Route::resource('admins', AdminController::class)->middleware(['admin']);
     });
 ##------------------------------------------------------- USERS MODULE
      Route::controller(UserController::class)->group(function () {
-        Route::resource('users', UserController::class);
+        Route::resource('users', UserController::class)->middleware(['admin']);
     });
     ##------------------------------------------------------- Categorys MODULE
     Route::controller(CategoryController::class)->group(function () {
-        Route::resource('categories', CategoryController::class);
+        Route::resource('categories', CategoryController::class)->middleware(['admin']);
     });
         ##------------------------------------------------------- Brands MODULE
 
     Route::controller(BrandController::class)->group(function () {
-        Route::resource('brands', BrandController::class);
+        Route::resource('brands', BrandController::class)->middleware(['admin']);
+    });
+    ##------------------------------------------------------- Products MODULE
+    Route::controller(ProductController::class)->group(function () {
+        Route::resource('products', ProductController::class)->middleware(['admin']);
     });
 
 

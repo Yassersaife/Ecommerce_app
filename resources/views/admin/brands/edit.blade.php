@@ -26,8 +26,7 @@
             <label class="form-label">{{ __('lang.image') }}</label>
             <input type="file" class="border form-control" name="image">
             @if ($brand->image)
-                <img src="{{ Storage::url($brand->image) }}" alt="{{ $brand->name }}" class="img-thumbnail mt-2"
-                    style="max-width: 150px;">
+                <img src="{{ asset('storage/' . $brand->image) }}" class="img-thumbnail" style="max-width: 150px;">
             @endif
         </div>
     </div>
