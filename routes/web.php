@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 
 //front
 Route::prefix('front')->name('front.')->group(function () {
-    Route::get('/', HomeController::class)->middleware('auth')->name('index');
+    Route::get('/', HomeController::class)->name('index')->middleware('auth');
 });
 //admin
 Route::prefix('admin')->name('admin.')->group(function () {

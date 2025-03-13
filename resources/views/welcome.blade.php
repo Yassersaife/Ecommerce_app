@@ -1524,24 +1524,40 @@
     <header class="w-full lg:max-w-4xl max-w-[335px] text-sm mb-6 not-has-[nav]:hidden">
         @if (Route::has('login'))
             <nav class="flex items-center justify-end gap-4">
-                @auth
+                @auth('web')
+                    {{-- المستخدم العادي --}}
+                    <a href="{{ route('front.index') }}"
+                        class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal">
+                        Home
+                    </a>
+                @endauth
+
+                @auth('admin')
+                    {{-- المسؤول (Admin) --}}
                     <a href="{{ route('admin.index') }}"
                         class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal">
-                        Dashboard
+                        Dashboard Admin
                     </a>
-                @else
+                @endauth
+
+                @guest('web')
+                    {{-- المستخدم غير مسجل دخول --}}
                     <a href="{{ route('login') }}"
                         class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] text-[#1b1b18] border border-transparent hover:border-[#19140035] dark:hover:border-[#3E3E3A] rounded-sm text-sm leading-normal">
                         Log in User
                     </a>
+                @endguest
 
+                @guest('admin')
+                    {{-- المسؤول غير مسجل دخول --}}
                     <a href="{{ route('admin.login') }}"
                         class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal">
-                        Log in AdMIN
+                        Log in Admin
                     </a>
-                @endauth
+                @endguest
             </nav>
         @endif
+
     </header>
     <div
         class="flex items-center justify-center w-full transition-opacity opacity-100 duration-750 lg:grow starting:opacity-0">

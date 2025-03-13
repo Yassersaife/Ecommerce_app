@@ -10,7 +10,6 @@
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
 
-            @include('front.partials.sidebar')
 
             <!-- Layout container -->
             <div class="layout-page">

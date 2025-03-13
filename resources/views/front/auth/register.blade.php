@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 
 <html lang="en" class="light-style customizer-hide" dir="ltr" data-theme="theme-default"
-    data-assets-path="{{ asset('assets-front') }}/" data-template="vertical-menu-template-free">
+    data-assets-path="{{ asset('assets-back') }}/" data-template="vertical-menu-template-free">
 
-@include('front.partials.authHead')
+@include('admin.partials.authHead')
 
 <body>
     <!-- Content -->
@@ -15,7 +15,7 @@
                 <!-- Register Card -->
                 <div class="card">
                     <div class="card-body">
-                        @include('front.partials.authLogo')
+                        @include('admin.partials.authLogo')
 
                         <h4 class="mb-2">Adventure starts here 🚀</h4>
                         <p class="mb-4">Make your app management easy and fun!</p>
@@ -68,7 +68,7 @@
     </div>
     <!-- / Content -->
 
-    @include('front.partials.authScripts')
+    @include('admin.partials.authScripts')
 </body>
 
 </html>

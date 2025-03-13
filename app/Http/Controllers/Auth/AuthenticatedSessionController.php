@@ -14,10 +14,14 @@ class AuthenticatedSessionController extends Controller
     /**
      * Display the login view.
      */
-    public function create(): View
+    public function create(): View|RedirectResponse
     {
-        return view('front.auth.login');
-    }
+        if (Auth::guard('web')->check()) {
+            return redirect()->route('front.index'); 
+        }
+    
+        return view('front.auth.login');   
+     }
 
     /**
      * Handle an incoming authentication request.
