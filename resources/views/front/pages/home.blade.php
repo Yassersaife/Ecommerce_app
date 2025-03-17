@@ -1,5 +1,6 @@
 @extends('front.master')
 @section('title', 'Dashboard Page')
+@section('home_active', 'active')
 
 @section('content')
     <section class="hero">

@@ -4,7 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Front\PageController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
@@ -13,7 +13,12 @@ use Illuminate\Support\Facades\Route;
 
 //front
 Route::prefix('front')->name('front.')->group(function () {
-    Route::get('/', HomeController::class)->name('index')->middleware('auth');
+    Route::get('/', [PageController::class,'home'])->name('index')->middleware('auth');
+    Route::get('/shop', [PageController::class, 'shop'])->name('shop')->middleware('auth');
+    Route::get('/about', [PageController::class, 'about'])->name('about')->middleware('auth');
+    Route::get('/contact', [PageController::class, 'contact'])->name('contact')->middleware('auth');
+
+    
 });
 //admin
 Route::prefix('admin')->name('admin.')->group(function () {
